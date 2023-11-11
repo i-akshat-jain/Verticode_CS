@@ -17,7 +17,7 @@ npm run start
 
  - Build a form to create a new person based on the person model provided
  - Pass the form data into the submit function provided
- -  card componentyou have built to display the submit function output (again based on the person model)
+ - Hide the form when submit and show the card component you have built to display the submit function output (again based on the person model)
 
 
 ## Submission

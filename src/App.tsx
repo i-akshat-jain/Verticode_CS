@@ -12,7 +12,7 @@ function App() {
   const submit: SubmitFunction = (person: IPerson) => {
     // Mock estimatedScore calculation
     person.estimatedScore = Math.floor(Math.random() * 10) + 1;
-    console.log('Submitted Person:', person.estimatedScore);
+    // console.log('Submitted Person:', person.estimatedScore);
     return person;
   };
 

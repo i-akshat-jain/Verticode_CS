@@ -3,21 +3,23 @@ body {
   font-family: 'Arial Rounded', sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: auto; /* Hide horizontal overflow */
+  overflow-x: auto; 
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-items: start;
   min-height: 100vh;
 }
 
 .form-container {
-  width: 80%; /* Adjust the width for better responsiveness */
-  max-width: 600px; /* Set a maximum width for larger screens */
+  width: 80%; 
+  max-width: 600px;
   border: 1px solid #ccc;
   padding: 20px;
+  background-color: #C9E4C5;
 }
 
 .form {
@@ -26,10 +28,9 @@ body {
 
 .success-card {
   padding: 20px;
-  background-color: #C9E4C5;
+  background-color: white;
   border-radius: 5px;
-  text-align: center;
-  align-self: top;
+  text-align: left; 
   margin-top: 10px;
 }
 
@@ -37,11 +38,20 @@ body {
   font-family: 'Arial Rounded', sans-serif;
   font-weight: bold;
   font-size: 18px;
+  align-items: center;
+  text-align: center; 
+}
+
+.success-card p {
+  margin-bottom: 8px; 
 }
 
 .form label {
   display: block;
   margin-bottom: 10px;
+  font-family: 'Arial Rounded', sans-serif;
+  font-weight: bold;
+  color: #133A30;
 }
 
 .form input,
@@ -56,7 +66,7 @@ body {
 }
 
 .form button {
-  background-color: #C9E4C5;
+  background-color: #133A30;
   color: white;
   padding: 10px;
   border: none;
@@ -64,20 +74,24 @@ body {
   font-family: 'Arial Rounded', sans-serif;
   font-weight: bold;
   cursor: pointer;
-  width: 100%; /* Make the button full width */
+  width: 100%; 
+}
+
+.success-card button {
+  background-color: #133A30;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Arial Rounded', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; 
 }
 
 /* Add responsive styles */
 @media (max-width: 768px) {
   .form-container {
-    width: 90%; /* Adjust width for smaller screens */
+    width: 90%; 
   }
 }
-/* body {
-  overflow-y: auto;
-}
-
-/* Allow scrolling if content height is greater than viewport height */
-/* body {
-  overflow-y: scroll;
-} */
