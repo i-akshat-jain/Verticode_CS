@@ -1,8 +1,8 @@
 // PersonForm.tsx
 import React, { useState } from 'react';
 import IPerson from "./models/Person";
-import './styles.css'; // Import the CSS file
-import ILocation  from './models/Person';
+import './styles.css'; 
+
 // Define the type for the submit function
 type SubmitFunction = (person: IPerson) => IPerson;
 
@@ -60,6 +60,15 @@ const validateForm = () => {
   if (!person.location.country?.trim()) {
     newErrors.location = { ...newErrors.location, country: 'Country is required' };
   }
+  const latPattern = /^(\+|-)?(?:90(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$/;
+  const longPattern = /^(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))$/;
+   if (!latPattern.test(person.location.lat!.trim())) {
+    newErrors.location = { ...newErrors.location, lat: 'Invalid latitude format' };
+  }
+
+  if (!longPattern.test(person.location.long!.trim())) {
+    newErrors.location = { ...newErrors.location, long: 'Invalid longitude format' };
+  }
 
   setErrors(newErrors);
 
@@ -78,7 +87,7 @@ const validateForm = () => {
       setFormSubmitted(true);
       setSubmittedPerson(submittedPerson);
     } else {
-      // Optionally, you can display a general error message
+      // display a general error message
       // alert('Please fill in all required fields.');
     }
   };
@@ -118,7 +127,7 @@ const validateForm = () => {
                 setErrors({});
               }}
             >
-              Reset Form
+              Submit Form Again
             </button>
           </div>
         ) : (
@@ -154,7 +163,6 @@ const validateForm = () => {
                     setErrors({ ...errors, dateOfBirth: undefined });
                   }
                 } catch (error) {
-                  // console.error('Error converting date:', errors.dateOfBirth);
                   setErrors({ ...errors, dateOfBirth: 'Invalid date format' });
                 }
               }}

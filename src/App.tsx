@@ -8,7 +8,6 @@ import PersonForm from './PersonForm';
 type SubmitFunction = (person: IPerson) => IPerson;
 
 function App() {
-  // Use the type for the submit function
   const submit: SubmitFunction = (person: IPerson) => {
     // Mock estimatedScore calculation
     person.estimatedScore = Math.floor(Math.random() * 10) + 1;
@@ -17,13 +16,12 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen overflow-y-auto"> {/* Set height, flex direction, align items, and overflow-y for scrolling */}
+    <div className="flex flex-col h-screen overflow-y-auto"> 
       <div className = "bg-light-green">
-        <div className="icon  mb-4 p-4" > {/* Add margin-bottom (mb-4) for gap */}
+        <div className="icon  mb-4 p-4" > 
           <img src={logo} className="m-auto h-16" />
         </div>
       </div>
-      {/* Include the PersonForm component and pass the submit function */}
       <div className="personform p-20">
         <PersonForm submit={submit} />
       </div>
